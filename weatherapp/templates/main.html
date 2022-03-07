@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+{% block content %}
+  <div id="sidebar" class="col-sm-4">
+
+
+<h2> {{ error }} </h2>
+
+<h2> Check the weather for City: </h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ city_form.as_p }}
+  <button type="submit">Choose</button>
+</form>
+
+<h2> Check the weather for point: </h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ coord_form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+
+  </div>
+{% endblock %}

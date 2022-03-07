@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Weather for region
+{% endblock %}
+
+{% block content %}
+
+  <div id="sidebar" class="col-sm-4">
+    <table border="1">
+     <caption> <h2> Weather for region </h2> </caption>
+        <tr>
+         <th> City </th>
+         <th> Main </th>
+         <th> Date </th>
+         <th> Weather icon </th>
+         <th> Weather description</th>
+         <th> Temreture, C </th>
+         <th> Temreture min, C</th>
+         <th> Temreture max, C</th>
+         <th> Feels like </th>
+         <th> Humidity </th>
+         <th> Visibility </th>
+         <th> Wind: speed </th>
+         <th> Wind: deg </th>
+        </tr>
+
+        {% for s in mas %}
+            <tr>
+                {% for e in s %}
+                <td>{{e}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+  </div>
+{% endblock %}

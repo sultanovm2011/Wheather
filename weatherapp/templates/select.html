@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+{% block content %}
+  <div id="sidebar" class="col-sm-4">
+
+
+  <h2>
+    {{id}}
+    <a href="{% url 'weatherapp:Create' %}">Select the City</a>
+
+</h2>
+
+  </div>
+{% endblock %}

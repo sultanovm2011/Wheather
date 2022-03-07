@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Погода
+{% endblock %}
+{% block content %}
+  <div id="sidebar" class="col-sm-4">
+
+    <h3> {{city}}</h3>
+    <h3> {{now}}</h3>
+
+    <h4>
+        <a href="{% url 'weatherapp:RegionWeather' id %} " method="post"> Weather for region </a>
+    </h4>
+
+    <h3> {{weather_main}} <img src={{weather_icon}} alt="img"></h3>
+    <h4> {{weather_description}}</h4>
+    <h4> Temreture {{temp}} C </h4>
+    <h4> Feels like {{feels_like}}</h4>
+    <h4> Min {{temp_min}} C, Max {{temp_max}} C</h4>
+    <h4> Humidity {{humidity}}</h4>
+    <h4> Visibility {{visibility}}</h4>
+    <h4> Wind: speed {{wind_speed}}, deg {{wind_deg}},</h4>
+
+  </div>
+{% endblock %}
